@@ -813,6 +813,11 @@
                         <span data-i18n="personalRanking">Garaje Top</span>
                     </button>
 
+                    <button id="fastest-cars-btn" class="mac-pill px-3 py-1.5 text-xs flex items-center gap-1.5 !bg-[#FF9F0A]/20 !border-[#FF9F0A]/45 text-[#FFD60A]" title="Top Coches Más Rápidos">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#FFD60A" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+                        <span data-i18n="fastestCarsBtn">Top Rápidos</span>
+                    </button>
+
                     <button id="direct-tv-btn" class="mac-pill px-3 py-1.5 text-xs flex items-center gap-1.5 !bg-[#0A84FF]/25 !border-[#0A84FF]/50 text-[#64D2FF]" title="Cambiar a Dashboard TV">
                         <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
                         <span data-i18n="directTv">Dash TV</span>
@@ -960,6 +965,11 @@
                 <button id="tv-garage-btn" class="mac-pill flex items-center space-x-1.5 px-3.5 py-2 text-xs font-medium" title="Ir al Garaje">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#64D2FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2"/><circle cx="7" cy="17" r="2"/><path d="M9 17h6"/><circle cx="17" cy="17" r="2"/></svg>
                     <span class="hidden sm:block">Garaje</span>
+                </button>
+
+                <button id="tv-fastest-btn" class="mac-pill flex items-center space-x-1.5 px-3.5 py-2 text-xs font-medium !bg-[#FF9F0A]/20 !border-[#FF9F0A]/40 text-[#FFD60A]" title="Top Coches Más Rápidos">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#FFD60A" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+                    <span class="hidden sm:block" data-i18n="fastestCarsBtn">Top Rápidos</span>
                 </button>
 
                 <div class="flex items-center bg-white/[0.07] p-1 rounded-full border border-white/10 space-x-1">
@@ -1291,6 +1301,10 @@
                 </div>
                 
                 <div class="flex items-center space-x-2">
+                    <button id="garage-fastest-btn" class="mac-pill px-3 py-1.5 text-xs font-semibold !bg-[#FF9F0A]/20 !border-[#FF9F0A]/45 text-[#FFD60A] flex items-center gap-1" title="Ver Top Más Rápidos">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+                        <span class="hidden sm:inline">Top Rápidos</span>
+                    </button>
                     <button id="garage-add-btn" class="mac-pill px-3 py-1.5 text-xs font-medium">+ Añadir</button>
                     <button id="garage-edit-btn" class="bg-[#0A84FF] hover:bg-[#0071e3] text-white px-3.5 py-1.5 text-xs font-semibold transition rounded-full">Editar</button>
                     <button id="garage-save-btn" class="hidden bg-[#30D158] hover:bg-[#28b84c] text-white px-3.5 py-1.5 text-xs font-semibold transition rounded-full">Guardar</button>
@@ -1760,6 +1774,44 @@
         </div>
     </div>
 
+    <!-- Nuevo Modal Top Coches Más Rápidos del Usuario (Speed & Power Showcase) -->
+    <div id="fastestCarsModal" class="modal-overlay hidden" style="z-index: 320;">
+        <div class="modal-content w-full max-w-5xl !bg-[#1c1c1e]/95 !text-white !border-white/15 rounded-[24px] overflow-hidden p-0 relative">
+            <div class="flex flex-wrap justify-between items-center gap-3 px-5 py-4 border-b border-white/10 relative z-20">
+                <div class="flex items-center gap-2.5">
+                    <div class="w-8 h-8 rounded-xl bg-gradient-to-b from-[#FFD60A] to-[#FF9F0A] flex items-center justify-center text-black shadow-sm">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+                    </div>
+                    <div>
+                        <h3 class="text-base sm:text-lg font-semibold text-white tracking-tight leading-none" data-i18n="fastestCarsTitle">Top Coches Más Rápidos</h3>
+                        <span class="text-[10px] text-white/45 font-medium block mt-0.5">Clasificación de Velocidad de tu Colección</span>
+                    </div>
+                </div>
+
+                <div class="flex items-center flex-wrap gap-2">
+                    <!-- Segmented Control estilo macOS -->
+                    <div class="flex items-center bg-black/40 p-1 rounded-full border border-white/10">
+                        <button type="button" data-fastest-sort="peak" class="fastest-sort-btn px-3 py-1 rounded-full text-[11px] font-semibold transition bg-[#0A84FF] text-white shadow-sm">
+                            Vel. Punta
+                        </button>
+                        <button type="button" data-fastest-sort="avg" class="fastest-sort-btn px-3 py-1 rounded-full text-[11px] font-semibold transition text-white/65 hover:text-white">
+                            Vel. Media
+                        </button>
+                        <button type="button" data-fastest-sort="lap" class="fastest-sort-btn px-3 py-1 rounded-full text-[11px] font-semibold transition text-white/65 hover:text-white">
+                            Crono
+                        </button>
+                    </div>
+
+                    <button id="close-fastest-cars-btn" class="mac-pill px-3.5 py-1.5 text-xs font-medium">Cerrar</button>
+                </div>
+            </div>
+
+            <div class="w-full h-[74vh] sm:h-[80vh] worn-asphalt-bg overflow-y-auto tv-scrollbar p-4 sm:p-6 relative scroll-smooth">
+                <div id="fastest-cars-body" class="flex flex-col gap-5 relative z-10 pb-12"></div>
+            </div>
+        </div>
+    </div>
+
     <script>
         const urlParams = new URLSearchParams(window.location.search);
         
@@ -1845,7 +1897,7 @@
                 tvStatusWaiting: "ESPERANDO...", tvStatusUplink: "ESTABLECIENDO UPLINK...",
                 tvStatusSearching: "BUSCANDO SEÑAL DE TELEMETRÍA",
                 tvStatusRoomClosed: "SALA INACTIVA O CERRADA", tvStatusError: "ERROR DE CONEXIÓN", clearRanking: "Borrar Ranking",
-                personalRanking: "Rankings Garaje"
+                personalRanking: "Rankings Garaje", fastestCarsBtn: "Top Rápidos", fastestCarsTitle: "Top Coches Más Rápidos"
             },
             en: {
                 langLabel: "Language / Idioma", history: "History", tvMode: "TV", tvSetupTitle: "Connect TV Screen",
@@ -1876,7 +1928,7 @@
                 tvStatusWaiting: "WAITING...", tvStatusUplink: "ESTABLISHING UPLINK...",
                 tvStatusSearching: "SEARCHING FOR TELEMETRY SIGNAL",
                 tvStatusRoomClosed: "INACTIVE OR CLOSED ROOM", tvStatusError: "CONNECTION ERROR", clearRanking: "Clear Ranking",
-                personalRanking: "Garage Rankings"
+                personalRanking: "Garage Rankings", fastestCarsBtn: "Fastest Top", fastestCarsTitle: "Top Fastest Cars"
             },
             fr: {
                 langLabel: "Langue / Language", history: "Historique", tvMode: "TV", tvSetupTitle: "Connecter Écran TV",
@@ -1907,7 +1959,7 @@
                 tvStatusWaiting: "EN ATTENTE...", tvStatusUplink: "ÉTABLISSEMENT DU LIEN...",
                 tvStatusSearching: "RECHERCHE DU SIGNAL DE TÉLÉMÉTRIE",
                 tvStatusRoomClosed: "SALLE INACTIVE OU FERMÉE", tvStatusError: "ERREUR DE CONNEXION", clearRanking: "Effacer Classement",
-                personalRanking: "Classement Garage"
+                personalRanking: "Classement Garage", fastestCarsBtn: "Top Rapides", fastestCarsTitle: "Top Voitures Rapides"
             }
         };
 
@@ -1988,6 +2040,15 @@
         const closePersonalRankingBtn = document.getElementById('close-personal-ranking-btn');
         const personalRankingBody = document.getElementById('personal-ranking-body');
         const clearPersonalRankingBtn = document.getElementById('clear-personal-ranking-btn');
+
+        // --- TOP COCHES MÁS RÁPIDOS UI ---
+        const fastestCarsBtn = document.getElementById('fastest-cars-btn');
+        const tvFastestBtn = document.getElementById('tv-fastest-btn');
+        const garageFastestBtn = document.getElementById('garage-fastest-btn');
+        const fastestCarsModal = document.getElementById('fastestCarsModal');
+        const closeFastestCarsBtn = document.getElementById('close-fastest-cars-btn');
+        const fastestCarsBody = document.getElementById('fastest-cars-body');
+        let currentFastestSort = 'peak';
 
         // --- TV SETUP MODAL ---
         const tvSetupModal = document.getElementById('tvSetupModal');
@@ -3197,60 +3258,67 @@
                 const imgId = `personal-rank-img-${r.id}-${idx}`;
                 const fillPct = Math.max(8, (leaderTime / r.bestLapMs) * 100);
                 
-                const defaultImg = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23121214'/%3E%3Ctext x='50' y='54' font-family='-apple-system, sans-serif' font-size='9' font-weight='600' fill='%236e6e73' text-anchor='middle'%3ESIN FOTO%3C/text%3E%3C/svg%3E";
+                const defaultImg = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23161618'/%3E%3Ctext x='50' y='52' font-family='-apple-system, sans-serif' font-size='8' font-weight='600' fill='%236e6e73' text-anchor='middle'%3ESIN FOTO%3C/text%3E%3C/svg%3E";
 
                 const timeFormatted = formatTime(r.bestLapMs, true);
                 const deltaStr = idx === 0 ? "LÍDER" : "+" + formatDeltaTime(r.bestLapMs - leaderTime);
 
+                let medalIcon = idx === 0 ? '🥇 ' : (idx === 1 ? '🥈 ' : (idx === 2 ? '🥉 ' : ''));
+
                 let div = document.createElement('div');
-                div.className = `relative flex flex-col w-full rounded-2xl overflow-hidden bg-white/[0.05] border ${borderColor} transition-all duration-200 group hover:-translate-y-0.5`;
+                div.className = `relative flex flex-col justify-between w-full min-h-[290px] sm:min-h-[310px] rounded-2xl overflow-hidden bg-[#161618] border ${borderColor} transition-all duration-300 group hover:-translate-y-1 shadow-lg`;
                 
                 div.innerHTML = `
-                    ${rankBadge}
-                    
-                    <button class="btn-buscar-web-ranking absolute top-3 right-3 z-40 bg-[#0A84FF] hover:bg-[#0071e3] text-white text-[10px] font-semibold px-2.5 py-1 rounded-full flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity shadow-sm" data-original-index="${r.originalIndex}" data-display-index="${idx}" title="Buscar foto en Google">
-                        WEB
-                    </button>
-
-                    <div class="relative w-full h-40 overflow-hidden shrink-0 border-b border-white/10 bg-[#121214] flex items-center justify-center">
-                        <img id="${escapeHtml(imgId)}" src="${defaultImg}" class="absolute inset-0 w-full h-full object-contain p-2 group-hover:scale-105 transition-transform duration-300">
-                        <div class="absolute bottom-2 right-3 tv-font font-bold text-xl ${posColor} z-20 bg-black/55 backdrop-blur-md px-2.5 py-0.5 rounded-full border border-white/10">
-                            #${idx + 1}
-                        </div>
+                    <!-- Imagen a cuadro completo con efecto difuminado -->
+                    <div class="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+                        <img id="${escapeHtml(imgId)}" src="${defaultImg}" class="w-full h-full object-cover scale-110 blur-[4px] opacity-80 group-hover:scale-105 group-hover:blur-[2px] transition-all duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/55 to-black/25"></div>
                     </div>
 
-                    <div class="flex-1 p-4 flex flex-col justify-between relative z-20">
-                        <div class="absolute bottom-0 left-0 h-1 bg-gradient-to-r ${fillGradient} opacity-80" style="width: ${fillPct}%"></div>
+                    <!-- Cabecera superior sobre la imagen -->
+                    <div class="relative z-20 p-4 flex justify-between items-start">
+                        <div class="tv-font font-bold text-base sm:text-lg ${posColor} bg-black/45 backdrop-blur-md px-3 py-1 rounded-full border border-white/15 shadow-sm">
+                            ${medalIcon}#${idx + 1}
+                        </div>
+
+                        <button class="btn-buscar-web-ranking bg-[#0A84FF]/90 hover:bg-[#0071e3] backdrop-blur-md text-white text-[10px] font-semibold px-3 py-1 rounded-full flex items-center gap-1 opacity-100 sm:opacity-0 sm:group-hover:opacity-100 transition-opacity shadow-sm border border-white/15" data-original-index="${r.originalIndex}" data-display-index="${idx}" title="Buscar foto en Google">
+                            WEB
+                        </button>
+                    </div>
+
+                    <!-- Contenido inferior sobre cristal difuminado -->
+                    <div class="relative z-20 p-4 pt-10 flex flex-col justify-end mt-auto">
+                        <div class="absolute bottom-0 left-0 h-1 bg-gradient-to-r ${fillGradient} opacity-90" style="width: ${fillPct}%"></div>
 
                         <div class="flex flex-col gap-1 mb-3">
-                            <span class="text-white font-semibold text-sm sm:text-base line-clamp-1 leading-snug">
+                            <span class="text-white font-bold text-base sm:text-lg line-clamp-1 leading-snug drop-shadow-sm">
                                 ${escapeHtml(carDisplayName)}
                             </span>
                             <div class="flex items-center gap-1.5 mt-0.5">
-                                <span class="bg-white/10 text-white/70 text-[10px] font-medium px-2 py-0.5 rounded-md truncate">${escapeHtml(r.marca || 'N/A')}</span>
-                                <span class="bg-white/10 text-white/70 text-[10px] font-medium px-2 py-0.5 rounded-md truncate">${escapeHtml(r.cat || 'N/A')}</span>
+                                <span class="bg-white/15 backdrop-blur-md text-white/90 text-[10px] font-medium px-2.5 py-0.5 rounded-full border border-white/10 truncate">${escapeHtml(r.marca || 'N/A')}</span>
+                                <span class="bg-white/15 backdrop-blur-md text-white/90 text-[10px] font-medium px-2.5 py-0.5 rounded-full border border-white/10 truncate">${escapeHtml(r.cat || 'N/A')}</span>
                             </div>
                         </div>
 
                         <div class="grid grid-cols-2 gap-2 mb-3">
-                            <div class="bg-black/30 p-2 rounded-xl border border-white/5 text-center">
-                                <span class="text-white/45 text-[10px] font-medium block">Vel. Media</span>
+                            <div class="bg-black/40 backdrop-blur-md p-2 rounded-xl border border-white/10 text-center">
+                                <span class="text-white/60 text-[10px] font-medium block">Vel. Media</span>
                                 <span class="tv-font text-[#64D2FF] font-semibold text-xs">${r.avgSpeedNum.toFixed(1)} km/h</span>
                             </div>
-                            <div class="bg-black/30 p-2 rounded-xl border border-white/5 text-center">
-                                <span class="text-white/45 text-[10px] font-medium block">Constancia</span>
+                            <div class="bg-black/40 backdrop-blur-md p-2 rounded-xl border border-white/10 text-center">
+                                <span class="text-white/60 text-[10px] font-medium block">Constancia</span>
                                 <span class="tv-font text-white font-semibold text-xs">${r.consistencyNum.toFixed(1)}%</span>
                             </div>
                         </div>
 
-                        <div class="pt-2.5 border-t border-white/10 flex justify-between items-end">
+                        <div class="pt-2.5 border-t border-white/15 flex justify-between items-end">
                             <div class="flex flex-col">
-                                <span class="text-[10px] font-medium text-white/45">Diferencia</span>
-                                <span class="tv-font text-white/80 font-semibold text-xs">${deltaStr}</span>
+                                <span class="text-[10px] font-medium text-white/60">Diferencia</span>
+                                <span class="tv-font text-white/90 font-semibold text-xs">${deltaStr}</span>
                             </div>
                             <div class="flex flex-col items-end">
                                 <span class="text-[10px] font-medium text-[#30D158]">Mejor Vuelta</span>
-                                <span class="tv-font text-xl font-bold ${highlightColor} leading-none mt-0.5">
+                                <span class="tv-font text-xl font-bold ${highlightColor} leading-none mt-0.5 drop-shadow-sm">
                                     ${timeFormatted}
                                 </span>
                             </div>
@@ -3269,8 +3337,8 @@
                             if (base64) ImageDB.save(r.imageId, base64);
                         }
                         if (base64) imgEl.src = base64;
-                        else if (r.image && r.image.length > 100) imgEl.src = r.image;
-                    } else if (r.image && r.image.length > 100) {
+                        else if (r.image && (r.image.length > 100 || r.image.startsWith('http'))) imgEl.src = r.image;
+                    } else if (r.image && (r.image.length > 100 || r.image.startsWith('http'))) {
                         imgEl.src = r.image;
                     }
                 }, 10);
@@ -3310,6 +3378,340 @@
                 });
             });
         }
+
+        function updateFastestSortTabsUI() {
+            document.querySelectorAll('.fastest-sort-btn').forEach(btn => {
+                if (btn.dataset.fastestSort === currentFastestSort) {
+                    btn.className = "fastest-sort-btn px-3 py-1 rounded-full text-[11px] font-semibold transition bg-[#0A84FF] text-white shadow-sm";
+                } else {
+                    btn.className = "fastest-sort-btn px-3 py-1 rounded-full text-[11px] font-semibold transition text-white/65 hover:text-white";
+                }
+            });
+        }
+
+        function openFastestCarsModal(sortMode = null) {
+            if (sortMode) currentFastestSort = sortMode;
+            updateFastestSortTabsUI();
+            loadFastestCarsLeaderboard();
+            if (fastestCarsModal) {
+                fastestCarsModal.classList.remove('hidden');
+                setTimeout(() => fastestCarsModal.classList.add('open'), 10);
+            }
+        }
+
+        async function loadFastestCarsLeaderboard() {
+            if (!fastestCarsBody) return;
+            const storedCars = JSON.parse(localStorage.getItem('krono_garage_cars') || 'null');
+            if (Array.isArray(storedCars) && storedCars.length > 0) {
+                garageCars = storedCars;
+            }
+
+            const trackLenFallback = parseFloat(trackLengthInput?.value) || 15;
+            let records = [];
+
+            garageCars.forEach((car, index) => {
+                const timeStr = typeof car.bestLap === 'string' ? car.bestLap.replace('s', '').trim() : car.bestLap;
+                const bestLapSecs = parseFloat(timeStr);
+                const avgSpdNum = parseFloat(car.avgSpd) || 0;
+                const storedMaxSpd = parseFloat(car.maxSpd) || 0;
+                const consNum = parseFloat(car.consistency) || 0;
+
+                const hasValidLap = !isNaN(bestLapSecs) && bestLapSecs > 0;
+                const hasValidSpeed = avgSpdNum > 0 || storedMaxSpd > 0;
+
+                if (hasValidLap || hasValidSpeed) {
+                    let derivedPeak = storedMaxSpd;
+                    if (derivedPeak <= 0) {
+                        if (avgSpdNum > 0 && consNum >= 35 && consNum <= 100) {
+                            derivedPeak = avgSpdNum / (consNum / 100);
+                        } else if (hasValidLap) {
+                            derivedPeak = (trackLenFallback / bestLapSecs) * 3.6;
+                        } else {
+                            derivedPeak = avgSpdNum;
+                        }
+                    }
+                    const effectiveAvg = avgSpdNum > 0 ? avgSpdNum : derivedPeak;
+                    const effectivePeak = Math.max(derivedPeak, effectiveAvg);
+
+                    records.push({
+                        ...car,
+                        bestLapMs: hasValidLap ? bestLapSecs * 1000 : Infinity,
+                        avgSpeedNum: effectiveAvg,
+                        avgScaleSpeed: effectiveAvg * 32,
+                        peakSpeedNum: effectivePeak,
+                        peakScaleSpeed: effectivePeak * 32,
+                        consistencyNum: consNum,
+                        originalIndex: index
+                    });
+                }
+            });
+
+            if (currentFastestSort === 'peak') {
+                records.sort((a, b) => b.peakSpeedNum - a.peakSpeedNum || a.bestLapMs - b.bestLapMs);
+            } else if (currentFastestSort === 'avg') {
+                records.sort((a, b) => b.avgSpeedNum - a.avgSpeedNum || a.bestLapMs - b.bestLapMs);
+            } else {
+                records.sort((a, b) => a.bestLapMs - b.bestLapMs || b.peakSpeedNum - a.peakSpeedNum);
+            }
+
+            fastestCarsBody.innerHTML = '';
+
+            if (records.length === 0) {
+                fastestCarsBody.innerHTML = `
+                    <div class="text-center p-10 text-white/55 font-medium text-sm border border-dashed border-white/15 rounded-2xl bg-white/[0.03]">
+                        Todavía no hay velocidades registradas en tu garaje. Completa una sesión en pista para coronar a tus coches más rápidos.
+                    </div>`;
+                return;
+            }
+
+            const defaultImg = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23161618'/%3E%3Ctext x='50' y='52' font-family='-apple-system, sans-serif' font-size='8' font-weight='600' fill='%236e6e73' text-anchor='middle'%3ESIN FOTO%3C/text%3E%3C/svg%3E";
+            const topMetricLeader = currentFastestSort === 'avg' ? records[0].avgSpeedNum : records[0].peakSpeedNum;
+            const leaderLapMs = records[0].bestLapMs;
+
+            // Sección 1: Podio Destacado Top 3
+            const podiumRecords = records.slice(0, 3);
+            const restRecords = records.slice(3);
+
+            const podiumGrid = document.createElement('div');
+            podiumGrid.className = "grid grid-cols-1 md:grid-cols-3 gap-4";
+
+            podiumRecords.forEach((r, idx) => {
+                const carDisplayName = r.name || `${r.marca || ''} ${r.ref || ''}`.trim() || 'Coche Desconocido';
+                const imgId = `fastest-car-img-${r.id}-${idx}`;
+                const mainRealSpd = currentFastestSort === 'avg' ? r.avgSpeedNum : r.peakSpeedNum;
+                const mainScaleSpd = currentFastestSort === 'avg' ? r.avgScaleSpeed : r.peakScaleSpeed;
+                const metricLabel = currentFastestSort === 'avg' ? 'Vel. Media Escala 1:32' : 'Vel. Punta Escala 1:32';
+                const timeFormatted = r.bestLapMs !== Infinity ? formatTime(r.bestLapMs, false) + 'S' : '--.---';
+
+                let borderStyle = 'border-[#FFD60A]/60 shadow-[0_14px_35px_rgba(255,214,10,0.16)]';
+                let badgeBg = 'bg-[#FFD60A] text-black';
+                let badgeLabel = '🥇 #1 MÁS RÁPIDO';
+                let accentText = 'text-[#FFD60A]';
+                let barGrad = 'from-[#FFD60A] to-[#FF9F0A]';
+
+                if (idx === 1) {
+                    borderStyle = 'border-white/30';
+                    badgeBg = 'bg-white/90 text-black';
+                    badgeLabel = '🥈 #2 PLATA';
+                    accentText = 'text-white';
+                    barGrad = 'from-slate-200 to-slate-400';
+                } else if (idx === 2) {
+                    borderStyle = 'border-[#FF9F0A]/50';
+                    badgeBg = 'bg-[#FF9F0A] text-black';
+                    badgeLabel = '🥉 #3 BRONCE';
+                    accentText = 'text-[#FF9F0A]';
+                    barGrad = 'from-[#FF9F0A] to-[#FF6B00]';
+                }
+
+                const pctWidth = currentFastestSort === 'lap'
+                    ? (r.bestLapMs !== Infinity && leaderLapMs !== Infinity ? Math.max(12, (leaderLapMs / r.bestLapMs) * 100) : 50)
+                    : Math.max(12, (mainRealSpd / (topMetricLeader || 1)) * 100);
+
+                const gapText = idx === 0
+                    ? 'REFERENCIA'
+                    : (currentFastestSort === 'lap' && r.bestLapMs !== Infinity && leaderLapMs !== Infinity
+                        ? `+${formatDeltaTime(r.bestLapMs - leaderLapMs)}S`
+                        : `-${((topMetricLeader - mainRealSpd) * 32).toFixed(0)} KM/H`);
+
+                const card = document.createElement('div');
+                card.className = `relative flex flex-col justify-between min-h-[300px] rounded-2xl overflow-hidden bg-[#161618] border ${borderStyle} transition-all duration-300 group hover:-translate-y-1`;
+                card.innerHTML = `
+                    <div class="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+                        <img id="${escapeHtml(imgId)}" src="${defaultImg}" class="w-full h-full object-cover scale-110 blur-[4px] opacity-80 group-hover:scale-105 group-hover:blur-[2px] transition-all duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/55 to-black/25"></div>
+                    </div>
+
+                    <div class="relative z-20 p-4 flex justify-between items-center gap-2">
+                        <span class="px-3 py-1 rounded-full text-[11px] font-bold ${badgeBg} shadow-sm">
+                            ${badgeLabel}
+                        </span>
+                        <button type="button" class="btn-select-fastest-car bg-white/15 hover:bg-[#0A84FF] backdrop-blur-md text-white text-[10px] font-semibold px-3 py-1 rounded-full border border-white/20 transition" data-car-name="${escapeHtml(carDisplayName)}">
+                            Usar en Pista
+                        </button>
+                    </div>
+
+                    <div class="relative z-20 p-4 pt-8 flex flex-col mt-auto">
+                        <div class="absolute bottom-0 left-0 h-1 bg-gradient-to-r ${barGrad}" style="width: ${pctWidth}%"></div>
+
+                        <span class="text-white font-bold text-base sm:text-lg line-clamp-1 leading-tight drop-shadow-sm">
+                            ${escapeHtml(carDisplayName)}
+                        </span>
+                        <div class="flex items-center gap-1.5 mt-1 mb-3">
+                            <span class="bg-white/15 backdrop-blur-md text-white/90 text-[10px] font-medium px-2.5 py-0.5 rounded-full border border-white/10 truncate">${escapeHtml(r.marca || 'SLOT')}</span>
+                            <span class="bg-white/15 backdrop-blur-md text-white/90 text-[10px] font-medium px-2.5 py-0.5 rounded-full border border-white/10 truncate">${escapeHtml(r.motor || r.cat || '1:32')}</span>
+                        </div>
+
+                        <div class="bg-black/45 backdrop-blur-md rounded-2xl p-3 border border-white/10 mb-2.5 flex items-end justify-between">
+                            <div>
+                                <span class="text-[10px] text-white/60 font-medium block">${metricLabel}</span>
+                                <div class="flex items-baseline gap-1.5 mt-0.5">
+                                    <span class="tv-font text-2xl sm:text-3xl font-bold ${accentText} leading-none">${mainScaleSpd.toFixed(0)}</span>
+                                    <span class="text-[11px] font-semibold text-white/70">KM/H</span>
+                                </div>
+                            </div>
+                            <div class="text-right">
+                                <span class="text-[10px] text-white/55 block">Real</span>
+                                <span class="tv-font text-sm font-semibold text-[#64D2FF]">${mainRealSpd.toFixed(1)} km/h</span>
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-3 gap-1.5 text-center pt-1">
+                            <div class="bg-black/35 backdrop-blur-md py-1.5 px-2 rounded-xl border border-white/10">
+                                <span class="text-[9px] text-white/55 block">Mejor V.</span>
+                                <span class="tv-font text-xs font-semibold text-[#30D158]">${timeFormatted}</span>
+                            </div>
+                            <div class="bg-black/35 backdrop-blur-md py-1.5 px-2 rounded-xl border border-white/10">
+                                <span class="text-[9px] text-white/55 block">Constancia</span>
+                                <span class="tv-font text-xs font-semibold text-white">${r.consistencyNum > 0 ? r.consistencyNum.toFixed(1) + '%' : '-'}</span>
+                            </div>
+                            <div class="bg-black/35 backdrop-blur-md py-1.5 px-2 rounded-xl border border-white/10">
+                                <span class="text-[9px] text-white/55 block">Gap</span>
+                                <span class="tv-font text-xs font-semibold text-white/85">${gapText}</span>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                podiumGrid.appendChild(card);
+            });
+
+            fastestCarsBody.appendChild(podiumGrid);
+
+            // Sección 2: Resto del Top (#4 en adelante)
+            if (restRecords.length > 0) {
+                const listContainer = document.createElement('div');
+                listContainer.className = "flex flex-col gap-3 mt-1";
+
+                restRecords.forEach((r, offsetIdx) => {
+                    const idx = offsetIdx + 3;
+                    const carDisplayName = r.name || `${r.marca || ''} ${r.ref || ''}`.trim() || 'Coche Desconocido';
+                    const imgId = `fastest-car-img-${r.id}-${idx}`;
+                    const mainRealSpd = currentFastestSort === 'avg' ? r.avgSpeedNum : r.peakSpeedNum;
+                    const mainScaleSpd = currentFastestSort === 'avg' ? r.avgScaleSpeed : r.peakScaleSpeed;
+                    const timeFormatted = r.bestLapMs !== Infinity ? formatTime(r.bestLapMs, false) + 'S' : '--.---';
+                    const pctWidth = currentFastestSort === 'lap'
+                        ? (r.bestLapMs !== Infinity && leaderLapMs !== Infinity ? Math.max(10, (leaderLapMs / r.bestLapMs) * 100) : 45)
+                        : Math.max(10, (mainRealSpd / (topMetricLeader || 1)) * 100);
+                    const gapText = currentFastestSort === 'lap' && r.bestLapMs !== Infinity && leaderLapMs !== Infinity
+                        ? `+${formatDeltaTime(r.bestLapMs - leaderLapMs)}S`
+                        : `-${((topMetricLeader - mainRealSpd) * 32).toFixed(0)} KM/H`;
+
+                    const row = document.createElement('div');
+                    row.className = "relative rounded-2xl overflow-hidden border border-white/10 hover:border-white/25 bg-[#161618] p-3.5 sm:p-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 group transition-all";
+                    row.innerHTML = `
+                        <div class="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+                            <img id="${escapeHtml(imgId)}" src="${defaultImg}" class="w-full h-full object-cover scale-110 blur-[5px] opacity-55 group-hover:opacity-75 transition-all duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-r from-black/90 via-black/75 to-black/85"></div>
+                        </div>
+
+                        <div class="absolute bottom-0 left-0 h-1 bg-gradient-to-r from-[#0A84FF] to-[#64D2FF] opacity-80 z-10" style="width: ${pctWidth}%"></div>
+
+                        <div class="relative z-20 flex items-center gap-3.5 min-w-0 flex-1">
+                            <div class="tv-font font-bold text-lg sm:text-xl text-white/75 bg-white/10 backdrop-blur-md w-11 h-11 rounded-xl flex items-center justify-center border border-white/10 shrink-0">
+                                #${idx + 1}
+                            </div>
+                            <div class="min-w-0 flex-1">
+                                <span class="text-white font-semibold text-sm sm:text-base truncate block">${escapeHtml(carDisplayName)}</span>
+                                <div class="flex flex-wrap items-center gap-1.5 mt-1">
+                                    <span class="bg-white/10 px-2 py-0.5 rounded-full text-[10px] text-white/80">${escapeHtml(r.marca || 'N/A')}</span>
+                                    <span class="bg-white/10 px-2 py-0.5 rounded-full text-[10px] text-[#30D158] tv-font">Mejor: ${timeFormatted}</span>
+                                    <span class="bg-white/10 px-2 py-0.5 rounded-full text-[10px] text-white/65 tv-font">${gapText}</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="relative z-20 flex items-center justify-between sm:justify-end gap-3 w-full sm:w-auto border-t sm:border-t-0 border-white/10 pt-2.5 sm:pt-0">
+                            <div class="text-left sm:text-right">
+                                <div class="flex items-baseline sm:justify-end gap-1">
+                                    <span class="tv-font text-xl sm:text-2xl font-bold text-[#64D2FF] leading-none">${mainScaleSpd.toFixed(0)}</span>
+                                    <span class="text-[10px] text-white/65 font-semibold">KM/H 1:32</span>
+                                </div>
+                                <span class="tv-font text-[11px] text-white/60 block mt-0.5">${mainRealSpd.toFixed(1)} km/h real</span>
+                            </div>
+                            <button type="button" class="btn-select-fastest-car bg-white/12 hover:bg-[#0A84FF] backdrop-blur-md text-white text-[10px] font-semibold px-3 py-2 rounded-full border border-white/15 transition shrink-0" data-car-name="${escapeHtml(carDisplayName)}">
+                                Usar
+                            </button>
+                        </div>
+                    `;
+                    listContainer.appendChild(row);
+                });
+
+                fastestCarsBody.appendChild(listContainer);
+            }
+
+            // Cargar fotos asíncronamente desde IndexedDB / Nube
+            records.forEach((r, idx) => {
+                setTimeout(async () => {
+                    const imgEl = document.getElementById(`fastest-car-img-${r.id}-${idx}`);
+                    if (!imgEl) return;
+                    if (r.imageId) {
+                        let base64 = await ImageDB.get(r.imageId);
+                        if (!base64) {
+                            base64 = await fetchImageFromCloud(r.imageId);
+                            if (base64) ImageDB.save(r.imageId, base64);
+                        }
+                        if (base64) imgEl.src = base64;
+                        else if (r.image && (r.image.length > 100 || r.image.startsWith('http'))) imgEl.src = r.image;
+                    } else if (r.image && (r.image.length > 100 || r.image.startsWith('http'))) {
+                        imgEl.src = r.image;
+                    }
+                }, 10);
+            });
+
+            // Botón rápido para seleccionar coche directamente para correr
+            fastestCarsBody.querySelectorAll('.btn-select-fastest-car').forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    const chosenName = btn.getAttribute('data-car-name');
+                    if (!chosenName) return;
+
+                    if (!isTVMode) {
+                        const carInput = document.getElementById('car-model-input');
+                        if (carInput) {
+                            let exists = Array.from(carInput.options).some(opt => opt.value === chosenName);
+                            if (!exists) {
+                                const newOpt = document.createElement('option');
+                                newOpt.value = chosenName;
+                                newOpt.textContent = chosenName.toUpperCase();
+                                carInput.appendChild(newOpt);
+                            }
+                            carInput.value = chosenName;
+                            localStorage.setItem('krono_car_model', chosenName);
+                            if (typeof updateConfigCarImage === 'function') updateConfigCarImage();
+                            if (typeof broadcastState === 'function') broadcastState();
+                            if (typeof triggerDebouncedCloudSync === 'function') triggerDebouncedCloudSync();
+                        }
+                    } else if (typeof window.sendRemoteCommand === 'function') {
+                        window.sendRemoteCommand('CHANGE_CAR', { car: chosenName });
+                    }
+
+                    fastestCarsModal.classList.remove('open');
+                    setTimeout(() => fastestCarsModal.classList.add('hidden'), 280);
+                });
+            });
+        }
+
+        if (fastestCarsBtn) {
+            fastestCarsBtn.addEventListener('click', () => openFastestCarsModal());
+        }
+        if (tvFastestBtn) {
+            tvFastestBtn.addEventListener('click', () => openFastestCarsModal());
+        }
+        if (garageFastestBtn) {
+            garageFastestBtn.addEventListener('click', () => openFastestCarsModal());
+        }
+        if (closeFastestCarsBtn) {
+            closeFastestCarsBtn.addEventListener('click', () => {
+                fastestCarsModal.classList.remove('open');
+                setTimeout(() => fastestCarsModal.classList.add('hidden'), 300);
+            });
+        }
+        document.querySelectorAll('.fastest-sort-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                currentFastestSort = btn.dataset.fastestSort || 'peak';
+                updateFastestSortTabsUI();
+                loadFastestCarsLeaderboard();
+            });
+        });
 
         function updateTexts() {
             const t = translations[currentLang];
@@ -3513,6 +3915,7 @@
                                 car.totalDist = "0.000 km";
                                 car.avgSpd = "0.0 km/h";
                                 car.avgSpd32 = "0.0 km/h";
+                                car.maxSpd = "0.0 km/h";
                                 car.consistency = "0";
                                 car._rawTotalTime = 0;
                                 car._rawTotalDist = 0;
@@ -5605,6 +6008,11 @@
                 let raceBest = bestLapTime / 1000;
                 if (raceBest > 0 && raceBest < currentBest) {
                     car.bestLap = raceBest.toFixed(3) + "s";
+                }
+
+                let currentMaxSpd = parseFloat(car.maxSpd) || 0;
+                if (maxSpeed > 0 && maxSpeed > currentMaxSpd) {
+                    car.maxSpd = maxSpeed.toFixed(1) + " km/h";
                 }
                 
                 let rawTime = car._rawTotalTime || 0;
